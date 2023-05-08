@@ -34,7 +34,7 @@ public class TopicController {
     public ResponseEntity<Topic> addTopic(@RequestBody Topic topic, UriComponentsBuilder builder) {
         Topic newTopic = service.addTopic(topic);
 
-        if (newTopic.getTopicId() == newTopic.getTopicId()) {
+        if (newTopic.getTopicId() == 0) {
             return new ResponseEntity<>(new Topic(), HttpStatus.CONFLICT);
         }
 
